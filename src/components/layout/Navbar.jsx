@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Container from "../common/Container";
+import logo from "../../assets/hotline-logo.png";
 
 // Change these once the client's real details are ready
-const COMPANY_NAME = "Kitchen";
-const PHONE = "+92 300 0000000";
-const EMAIL = "info@yourcompany.com";
+const COMPANY_NAME = "Hotline Engineering";
+const PHONE = "+92333 6600766";
+const EMAIL = "Hotlineengineeringco@gmail.com";
 
 const productLinks = [
   { label: "Sweets Machinery", href: "/#products" },
@@ -155,8 +156,17 @@ export default function Navbar() {
         >
           <Container className="flex h-[4.5rem] items-center justify-between lg:h-20">
             {/* Brand Logo */}
-            <Link to="/" className="font-body text-2xl font-bold tracking-tight text-ink lg:text-3xl" onClick={() => { closeMenu(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
-              {COMPANY_NAME}
+            <Link
+              to="/"
+              className="flex shrink-0 items-center"
+              aria-label={`${COMPANY_NAME} home`}
+              onClick={() => { closeMenu(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+            >
+              <img
+                src={logo}
+                alt={COMPANY_NAME}
+                className="h-10 w-auto sm:h-12 lg:h-14"
+              />
             </Link>
 
             {/* Desktop links */}
@@ -229,8 +239,17 @@ export default function Navbar() {
             >
               {/* Drawer Header */}
               <div className="flex h-18 items-center justify-between border-b border-border px-5">
-                <Link to="/" onClick={closeMenu} className="font-body text-xl font-bold tracking-tight text-ink">
-                  {COMPANY_NAME}
+                <Link
+                  to="/"
+                  onClick={closeMenu}
+                  aria-label={`${COMPANY_NAME} home`}
+                  className="flex items-center"
+                >
+                  <img
+                    src={logo}
+                    alt={COMPANY_NAME}
+                    className="h-10 w-auto"
+                  />
                 </Link>
                 <button
                   type="button"
