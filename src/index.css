@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-soft: #F5F7FA;
+  --color-tint: #FFF3EA;
+  --color-border: #E3E8EE;
+  --color-ink: #1F2D3D;
+  --color-muted: #5B6776;
+  --color-primary: #2F5D8A;
+  --color-accent: #F26B21;
+  --color-accent-dark: #D4540F;
+
+  --font-heading: "Barlow Condensed", sans-serif;
+--font-body: "Barlow", sans-serif;
+}
+
+:root {
+  --site-header-height: 65px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --site-header-height: 102px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --site-header-height: 80px;
+  }
+
+  .hero-section {
+    height: min(calc(100svh - var(--site-header-height)), 820px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
